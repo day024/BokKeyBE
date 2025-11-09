@@ -7,7 +7,7 @@ import { BookmarkProvider } from './contexts/BookMarkContext.jsx';
 import { CartProvider } from './contexts/CartContext'; // 추가
 
 async function prepare() {
-  if (process.env.NODE_ENV === 'development') {
+  if (import.meta.env.MODE === 'development') {
     const { worker } = await import('../mocks/browser');
     await worker.start();
   }
